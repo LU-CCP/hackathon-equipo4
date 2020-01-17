@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { ImageBackground, Text, TouchableOpacity } from 'react-native';
+import { ImageBackground, Text, TouchableOpacity, Button } from 'react-native';
 import { useSelector } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import openURLInBrowser from 'react-native/Libraries/Core/Devtools/openURLInBrowser';
@@ -17,6 +17,7 @@ import {
 } from '../../config/messages';
 import reactImage from '../../resources/images/react.png';
 import Main from '../Main';
+import { ADDDESCRIPTION_SCREEN, HOURS_SCREEN } from '../../navigation/screens';
 
 import styles from './styles';
 
@@ -39,6 +40,10 @@ const Example = ({ navigation }) => {
     []
   );
 
+  const handleNavigate = useCallback(() => navigation.navigate(HOURS_SCREEN), [
+    navigation
+  ]);
+
   return (
     <Main navigation={navigation}>
       <ImageBackground
@@ -57,6 +62,7 @@ const Example = ({ navigation }) => {
         >
           <Text style={styles.link}>{LEARN_REACT_NATIVE_MSG}</Text>
         </TouchableOpacity>
+        <Button title='Description' onPress={handleNavigate} />
       </ImageBackground>
     </Main>
   );

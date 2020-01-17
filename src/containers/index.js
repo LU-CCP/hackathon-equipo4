@@ -1,4 +1,5 @@
 import Example from './Example';
 import Menu from './Menu';
+import Hours from './Hours';
 
-export { Example, Menu };
+export { Example, Hours, Menu };

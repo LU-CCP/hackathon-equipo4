@@ -4,6 +4,7 @@ import {
 } from 'react-navigation-stack';
 
 import { Example, Menu } from '../../containers';
+import {  Hours } from '../../containers';
 import { EXAMPLE_SCREEN } from '../screens';
 
 const RootNavigator = createStackNavigator(
