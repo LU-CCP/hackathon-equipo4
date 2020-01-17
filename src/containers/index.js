@@ -3,4 +3,4 @@ import Menu from './Menu';
 import Hours from './Hours';
 import Login from './Login';
 
-export { Example, Hours, Login };
+export { Example, Hours, Login, Menu };
