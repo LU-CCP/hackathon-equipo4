@@ -15,7 +15,7 @@ const Login = ({ navigation }) => {
   const touchRef = useRef();
 
   const optionalConfigObject = {
-    title: 'Autenrificación requerida', // Android
+    title: 'Autentificación requerida', // Android
     imageColor: '#e00606', // Androidv
 
     imageErrorColor: '#ff0000', // Android

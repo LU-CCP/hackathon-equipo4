@@ -10,6 +10,7 @@ import {
   HoursLoad,
   CheckSend
 } from '../../components';
+import Summary from '../../components/Summary';
 
 const styles = StyleSheet.create({
   slide: {
@@ -35,6 +36,8 @@ const Hours = () => {
   const [description, setDescription] = useState();
   const [dateRange, setDateRange] = useState();
   const [hourType, setHourType] = useState();
+  const [hours, setHours] = useState();
+
   const [project, setProject] = useState();
 
   return (
@@ -46,13 +49,22 @@ const Hours = () => {
         <ListProjects onChange={setProject} />
       </View>
       <View style={styles.slide2}>
-        <ChargeHours onChange={setHourType} />
+        <ChargeHours onChangehours={setHours} onChangeHourType={setHourType} />
       </View>
       <View style={[styles.slide, { backgroundColor: 'white' }]}>
         <AddDescription onChange={setDescription} />
       </View>
       <View style={[styles.slide, { backgroundColor: 'white' }]}>
         <Schedule onChange={setDateRange} />
+      </View>
+      <View style={[styles.slide, { backgroundColor: 'white' }]}>
+        <Summary
+          description={description}
+          dateRange={dateRange}
+          hourType={hourType}
+          project={project}
+          hours={hours}
+        />
       </View>
       <View style={[styles.slide, { backgroundColor: 'white' }]}>
         <CheckSend />

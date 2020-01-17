@@ -8,8 +8,10 @@ const styles = StyleSheet.create({
   },
   container: {
     fontSize: 30,
-    textAlign: 'center',
-    fontWeight: 'bold'
+    textAlign: 'left',
+    fontWeight: 'bold',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start'
   }
 });
 
