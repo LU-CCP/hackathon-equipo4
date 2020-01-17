@@ -1,30 +1,29 @@
 import React, { useRef, useCallback, useState } from 'react';
 import VoiceToText, { EVENTS } from 'react-native-voice-oop';
-import { View, Text, Button, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, TouchableWithoutFeedback } from 'react-native';
 import LottieView from 'lottie-react-native';
-import { TextInput } from 'react-native-paper';
+import { TextInput, Button } from 'react-native-paper';
 
 import { useLifecycles, useEventListener, useUnmount } from '../../hooks';
 
-import style from './styles';
+import styles from './styles';
 
 const AddDescription = () => {
   const voiceRef = useRef(new VoiceToText());
   const [text, setText] = useState('');
   const [disableInput, setDisableInput] = useState(true);
-  const [playMicrophone, setPlayMicrophone] = useState(false);
+  const micRef = useRef();
 
   const handlePress = useCallback(async () => {
-    setPlayMicrophone(true);
-
     if (!(await VoiceToText.isRecognizing())) {
-      console.log('ok');
+      micRef.current.play();
       voiceRef.current.start();
     }
   }, []);
+
   const handleRecord = useCallback(({ value }) => {
-    console.log(value);
     setText(value[0]);
+    micRef.current.reset();
   }, []);
 
   useUnmount(() => {
@@ -36,7 +35,6 @@ const AddDescription = () => {
 
   const textInputhandler = value => {
     setText(value);
-    setPlayMicrophone(false);
   };
 
   const handleModifyInput = () => {
@@ -44,32 +42,37 @@ const AddDescription = () => {
   };
 
   return (
-    <View>
-      <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ height: 190, justifyContent: 'center', marginTop: 30 }}>
+    <View style={styles.container}>
+      <View style={styles.container2}>
+        <View style={styles.container3}>
           <TouchableWithoutFeedback onPress={handlePress}>
             <LottieView
               source={require('../../resources/animations/2887-listen-state.json')}
-              autoPlay
               loop
+              ref={micRef}
             />
           </TouchableWithoutFeedback>
         </View>
       </View>
-      <Text>Descripcion</Text>
-      <View style={{ flex: 1 }}>
+      <View style={styles.container4}>
         <TextInput
           value={text}
           onChangeText={textInputhandler}
-          mode='outlined'
           disabled={disableInput}
+          label='Descripción'
         />
       </View>
-      <View style={style.nuevoBoton}>
-        <Button title='Grabar nuevamente' />
-      </View>
-      <View>
-        <Button title='Modificar texto' onPress={handleModifyInput} />
+      <View style={styles.boton2}>
+        <Button style={styles.boton} mode='contained'>
+          Grabar nuevamente
+        </Button>
+        <Button
+          style={styles.boton}
+          mode='contained'
+          onPress={handleModifyInput}
+        >
+          Modificar texto
+        </Button>
       </View>
     </View>
   );
