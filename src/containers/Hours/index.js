@@ -42,7 +42,7 @@ const Hours = () => {
 
   return (
     <AppIntro skipBtnLabel='Atrás'>
-      <View>
+      <View style={[styles.slide, { backgroundColor: '#ecfcff' }]}>
         <HoursLoad />
       </View>
       <View>
@@ -51,13 +51,13 @@ const Hours = () => {
       <View style={styles.slide2}>
         <ChargeHours onChangehours={setHours} onChangeHourType={setHourType} />
       </View>
-      <View style={[styles.slide, { backgroundColor: 'white' }]}>
+      <View style={[styles.slide, { backgroundColor: '#b2fcff' }]}>
         <AddDescription onChange={setDescription} />
       </View>
-      <View style={[styles.slide, { backgroundColor: 'white' }]}>
+      <View style={[styles.slide, { backgroundColor: '#5edfff' }]}>
         <Schedule onChange={setDateRange} />
       </View>
-      <View style={[styles.slide, { backgroundColor: 'white' }]}>
+      <View style={[styles.slide, { backgroundColor: '#5edfff ' }]}>
         <Summary
           description={description}
           dateRange={dateRange}
@@ -66,19 +66,8 @@ const Hours = () => {
           hours={hours}
         />
       </View>
-      <View style={[styles.slide, { backgroundColor: 'white' }]}>
+      <View style={[styles.slide, { backgroundColor: '#3e64ff' }]}>
         <CheckSend />
-      </View>
-      <View style={[styles.slide, { backgroundColor: '#a4b602' }]}>
-        <View level={5}>
-          <Text style={styles.text}>Page 4</Text>
-        </View>
-        <View level={10}>
-          <Text style={styles.text}>Page 4</Text>
-        </View>
-        <View level={15}>
-          <Text style={styles.text}>Page 4</Text>
-        </View>
       </View>
     </AppIntro>
   );
