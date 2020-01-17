@@ -11,12 +11,20 @@ import RNPickerSelect from 'react-native-picker-select';
 
 import styles from './styles';
 
-const ChargeHours = () => {
+const ChargeHours = ({ onChange }) => {
+  const { hours, hourType } = onChange;
   const [value, setValue] = useState('productivo');
-  const handleValueChange = useCallback(newValue => setValue(newValue), []);
+  const handleValueChange = useCallback(
+    newValue => {
+      setValue(newValue);
+      onChange({ hourType: newValue });
+    },
+    [onChange]
+  );
   const [numberHours, setNumberHours] = useState();
   const numberInputHandler = inputHours => {
     setNumberHours(inputHours.replace(/[^0-9]/g, ''));
+    onChange({ hours: numberHours });
   };
 
   return (

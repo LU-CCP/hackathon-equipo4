@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AppIntro from 'rn-falcon-app-intro';
 import { StyleSheet, Text, View } from 'react-native';
 
-import { AddDescription } from '../../components';
+import { AddDescription, Schedule, ChargeHours } from '../../components';
 
 const styles = StyleSheet.create({
   slide: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#9DD6EB',
+    padding: 15
+  },
+  slide2: {
+    flex: 1,
     backgroundColor: '#9DD6EB',
     padding: 15
   },
@@ -19,45 +24,37 @@ const styles = StyleSheet.create({
   }
 });
 
-const Hours = () => (
-  <AppIntro>
-    <View style={[styles.slide, { backgroundColor: '#fa931d' }]}>
-      <AddDescription />
-    </View>
-    <View style={[styles.slide, { backgroundColor: '#a4b602' }]}>
-      <View level={-10}>
-        <Text style={styles.text}> </Text>
+const Hours = () => {
+  const [description, setDescription] = useState();
+  const [dateRange, setDateRange] = useState();
+  const [hourType, setHourType] = useState();
+
+  return (
+    <AppIntro>
+      <View style={styles.slide2}>
+        <ChargeHours onChange={setHourType} />
       </View>
-      <View level={5}>
-        <Text style={styles.text}>Page 2</Text>
+      <View style={[styles.slide, { backgroundColor: 'white' }]}>
+        <AddDescription onChange={setDescription} />
       </View>
-      <View level={20}>
-        <Text style={styles.text}>Page 2</Text>
+      <View style={[styles.slide, { backgroundColor: 'white' }]} />
+
+      <View style={[styles.slide, { backgroundColor: 'white' }]}>
+        <Schedule onChange={setDateRange} />
       </View>
-    </View>
-    <View style={[styles.slide, { backgroundColor: '#fa931d' }]}>
-      <View level={8}>
-        <Text style={styles.text}>Page 3</Text>
+      <View style={[styles.slide, { backgroundColor: '#a4b602' }]}>
+        <View level={5}>
+          <Text style={styles.text}>Page 4</Text>
+        </View>
+        <View level={10}>
+          <Text style={styles.text}>Page 4</Text>
+        </View>
+        <View level={15}>
+          <Text style={styles.text}>Page 4</Text>
+        </View>
       </View>
-      <View level={0}>
-        <Text style={styles.text}>Page 3</Text>
-      </View>
-      <View level={-10}>
-        <Text style={styles.text}>Page 3</Text>
-      </View>
-    </View>
-    <View style={[styles.slide, { backgroundColor: '#a4b602' }]}>
-      <View level={5}>
-        <Text style={styles.text}>Page 4</Text>
-      </View>
-      <View level={10}>
-        <Text style={styles.text}>Page 4</Text>
-      </View>
-      <View level={15}>
-        <Text style={styles.text}>Page 4</Text>
-      </View>
-    </View>
-  </AppIntro>
-);
+    </AppIntro>
+  );
+};
 
 export default Hours;

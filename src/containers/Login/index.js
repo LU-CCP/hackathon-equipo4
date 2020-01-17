@@ -57,7 +57,8 @@ const Login = ({ navigation }) => {
           <LottieView
             source={require('../../resources/animations/663-fingerprint-scan.json')}
             loop
-            ref={touchRef}
+            autoPlay
+            // ref={touchRef}
           />
         </TouchableWithoutFeedback>
       </View>
