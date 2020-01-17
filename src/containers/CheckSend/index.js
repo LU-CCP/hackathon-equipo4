@@ -1,11 +1,12 @@
 import React from 'react';
 import LottieView from 'lottie-react-native';
 
-const CheckSend = () => {
+const CheckSend = () => (
   <LottieView
-    Source={require('../../resources/animations/1175-email.json')}
-    autoplay
-  />;
-};
+    source={require('../../resources/animations/1175-email.json')}
+    autoPlay
+    loop
+  />
+);
 
 export default CheckSend;
