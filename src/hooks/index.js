@@ -5,6 +5,7 @@ import useLifecycles from './useLifecycles';
 import useMount from './useMount';
 import useNavigationEvents from './useNavigationEvents';
 import useUnmount from './useUnmount';
+import useEventListener from './useEventListener';
 
 export {
   useActions,
@@ -13,5 +14,6 @@ export {
   useLifecycles,
   useMount,
   useNavigationEvents,
-  useUnmount
+  useUnmount,
+  useEventListener
 };
