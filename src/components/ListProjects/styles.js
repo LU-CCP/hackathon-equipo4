@@ -7,7 +7,18 @@ const styles = StyleSheet.create({
   },
   text: {
     marginTop: 5,
-    textAlign: 'center'
+    textAlign: 'center',
+    color: '#bbe1fa'
+  },
+  views: {
+    backgroundColor: '#3282B8',
+    width: 300,
+    borderRadius: 10,
+    marginVertical: 5,
+    alignItems: 'center'
+  },
+  radio: {
+    color: 'red'
   }
 });
 

@@ -5,8 +5,13 @@ import { RadioButton } from 'react-native-paper';
 import styles from './styles';
 
 const ListProjects = () => {
+  const projects = [
+    { text: 'Proyecto 1', value: '1' },
+    { text: 'Proyecto 2', value: '2' },
+    { text: 'Proyecto 3', value: '3' },
+    { text: 'Proyecto 4', value: '4' }
+  ];
   const [select, setSelect] = useState();
-  // const opciones = [1, 2, 3];
 
   const handleSelected = value => {
     setSelect(value);
@@ -15,19 +20,13 @@ const ListProjects = () => {
 
   return (
     <View>
-      <RadioButton.Group onValueChange={handleSelected}>
-        <View>
-          <Text>Proyecto 1</Text>
-          <RadioButton value='1' />
-        </View>
-        <View>
-          <Text>Proyecto 2</Text>
-          <RadioButton value='2' />
-        </View>
-        <View>
-          <Text>Proyecto 3</Text>
-          <RadioButton value='3' />
-        </View>
+      <RadioButton.Group onValueChange={handleSelected} value={select}>
+        {projects.map(({ text, value }) => (
+          <View style={styles.views}>
+            <Text style={styles.text}>{text}</Text>
+            <RadioButton style={styles.radio} value={value} />
+          </View>
+        ))}
       </RadioButton.Group>
       <Text style={styles.text}> {select}</Text>
     </View>
