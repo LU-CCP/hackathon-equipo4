@@ -41,7 +41,7 @@ const Hours = () => {
   const [project, setProject] = useState();
 
   return (
-    <AppIntro skipBtnLabel='Atrás'>
+    <AppIntro skipBtnLabel='Atrás' doneBtnLabel='OK'>
       <View style={[styles.slide, { backgroundColor: '#ecfcff' }]}>
         <HoursLoad />
       </View>
@@ -57,7 +57,7 @@ const Hours = () => {
       <View style={[styles.slide, { backgroundColor: '#5edfff' }]}>
         <Schedule onChange={setDateRange} />
       </View>
-      <View style={[styles.slide, { backgroundColor: '#5edfff ' }]}>
+      <View style={[styles.slide, { backgroundColor: '#5edfff' }]}>
         <Summary
           description={description}
           dateRange={dateRange}

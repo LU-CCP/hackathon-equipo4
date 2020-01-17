@@ -39,7 +39,7 @@ const Login = ({ navigation }) => {
       );
       handleNavigate();
     } catch (error) {
-      Alert.alert('Authentication Failed');
+      Alert.alert('No se reconoce');
     }
   }, [handleNavigate, optionalConfigObject]);
 

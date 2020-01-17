@@ -6,10 +6,10 @@ import styles from './styles';
 
 const ListProjects = ({ onChange }) => {
   const projects = [
-    { text: 'Proyecto 1', value: '1' },
-    { text: 'Proyecto 2', value: '2' },
-    { text: 'Proyecto 3', value: '3' },
-    { text: 'Proyecto 4', value: '4' }
+    { text: 'MELI', value: '1' },
+    { text: 'LCNI', value: '2' },
+    { text: 'Parque Arauco', value: '3' },
+    { text: 'ACHS', value: '4' }
   ];
   const [select, setSelect] = useState();
 
