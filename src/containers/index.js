@@ -1,4 +1,5 @@
 import Example from './Example';
-import ListProyects from './ListProyects';
+import AddDescription from './AddDescription';
+import Hours from './Hours';
 
-export { Example, ListProyects };
+export { Example, AddDescription, Hours };

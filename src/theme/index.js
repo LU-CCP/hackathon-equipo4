@@ -1,4 +1,4 @@
-import { DefaultTheme } from 'react-native-paper';
+import { DefaultTheme, Colors } from 'react-native-paper';
 
 import colors from './colors';
 
