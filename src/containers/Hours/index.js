@@ -2,7 +2,7 @@ import React from 'react';
 import AppIntro from 'rn-falcon-app-intro';
 import { StyleSheet, Text, View } from 'react-native';
 
-import { AddDescription } from '../../components';
+import { AddDescription, ListProjects } from '../../components';
 
 const styles = StyleSheet.create({
   slide: {
@@ -29,7 +29,7 @@ const Hours = () => (
         <Text style={styles.text}> </Text>
       </View>
       <View level={5}>
-        <Text style={styles.text}>Page 2</Text>
+        <ListProjects />
       </View>
       <View level={20}>
         <Text style={styles.text}>Page 2</Text>

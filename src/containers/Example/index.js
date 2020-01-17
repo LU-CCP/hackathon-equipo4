@@ -47,15 +47,12 @@ const Example = ({ navigation }) => {
 
   return (
     <Main navigation={navigation}>
-        <Text style={styles.title}>{WELCOME_MSG}</Text>
-        <ListProjectsComponent/>
-        <TouchableOpacity
-          style={styles.linkContainer}
-          onPress={handleOpenURLInBrowserl}
-        >
-        </TouchableOpacity>
-        <Button title='Description' onPress={handleNavigate} />
-      </ImageBackground>
+      <Text style={styles.title}>{WELCOME_MSG}</Text>
+      <TouchableOpacity
+        style={styles.linkContainer}
+        onPress={handleOpenURLInBrowserl}
+      ></TouchableOpacity>
+      <Button title='Description' onPress={handleNavigate} />
     </Main>
   );
 };
