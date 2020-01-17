@@ -25,11 +25,20 @@ const ListProjects = ({ onChange }) => {
     <View
       style={{
         alignItems: 'center',
-        justifyContent: 'center',
         height: '100%'
       }}
     >
-      <Text>Selecciona tu proyecto</Text>
+      <Text
+        style={{
+          fontSize: 30,
+          fontWeight: 'bold',
+          marginBottom: 30,
+          textAlign: 'center',
+          marginTop: 30
+        }}
+      >
+        Selecciona tu proyecto
+      </Text>
       <View>
         <RadioButton.Group
           onValueChange={handleSelected}

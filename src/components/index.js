@@ -5,6 +5,7 @@ import Schedule from './Schedule';
 import ChargeHours from './ChargeHours';
 import ListProjects from './ListProjects';
 import CheckSend from './CheckSend';
+import HoursLoad from './HoursLoad';
 
 export {
   Example,
@@ -13,5 +14,6 @@ export {
   Schedule,
   ChargeHours,
   ListProjects,
-  CheckSend
+  CheckSend,
+  HoursLoad
 };

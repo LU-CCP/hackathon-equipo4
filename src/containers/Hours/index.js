@@ -6,7 +6,9 @@ import {
   AddDescription,
   Schedule,
   ChargeHours,
-  ListProjects
+  ListProjects,
+  HoursLoad,
+  CheckSend
 } from '../../components';
 
 const styles = StyleSheet.create({
@@ -38,6 +40,9 @@ const Hours = () => {
   return (
     <AppIntro>
       <View>
+        <HoursLoad />
+      </View>
+      <View>
         <ListProjects onChange={setProject} />
       </View>
       <View style={styles.slide2}>
@@ -46,10 +51,11 @@ const Hours = () => {
       <View style={[styles.slide, { backgroundColor: 'white' }]}>
         <AddDescription onChange={setDescription} />
       </View>
-      <View style={[styles.slide, { backgroundColor: 'white' }]} />
-
       <View style={[styles.slide, { backgroundColor: 'white' }]}>
         <Schedule onChange={setDateRange} />
+      </View>
+      <View style={[styles.slide, { backgroundColor: 'white' }]}>
+        <CheckSend />
       </View>
       <View style={[styles.slide, { backgroundColor: '#a4b602' }]}>
         <View level={5}>

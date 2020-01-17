@@ -45,6 +45,17 @@ export default class Schedule extends Component {
 
     return (
       <View style={styles.container}>
+        <Text
+          style={{
+            fontSize: 30,
+            fontWeight: 'bold',
+            marginBottom: 30,
+            textAlign: 'center'
+            // marginTop: 30
+          }}
+        >
+          Programa tu carga
+        </Text>
         <CalendarPicker
           locale='es'
           startFromMonday

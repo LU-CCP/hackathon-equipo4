@@ -35,7 +35,17 @@ const ChargeHours = ({ onChange }) => {
     >
       <View style={styles.container1}>
         <View>
-          <Text style={styles.title1}>Paso 2</Text>
+          <Text
+            style={{
+              fontSize: 30,
+              fontWeight: 'bold',
+              marginBottom: 30,
+              textAlign: 'center',
+              marginTop: 30
+            }}
+          >
+            Detalla tu carga
+          </Text>
           <Text style={styles.title2}>Tipo de Carga</Text>
           <View style={styles.container4}>
             <RNPickerSelect
