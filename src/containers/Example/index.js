@@ -17,7 +17,7 @@ import {
 } from '../../config/messages';
 import reactImage from '../../resources/images/react.png';
 import Main from '../Main';
-import { ADDDESCRIPTION_SCREEN } from '../../navigation/screens';
+import { ADDDESCRIPTION_SCREEN, HOURS_SCREEN } from '../../navigation/screens';
 
 import styles from './styles';
 
@@ -40,10 +40,9 @@ const Example = ({ navigation }) => {
     []
   );
 
-  const handleNavigate = useCallback(
-    () => navigation.navigate(ADDDESCRIPTION_SCREEN),
-    [navigation]
-  );
+  const handleNavigate = useCallback(() => navigation.navigate(HOURS_SCREEN), [
+    navigation
+  ]);
 
   return (
     <Main navigation={navigation}>

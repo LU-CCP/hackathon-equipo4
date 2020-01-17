@@ -2,6 +2,8 @@ import React from 'react';
 import AppIntro from 'rn-falcon-app-intro';
 import { StyleSheet, Text, View } from 'react-native';
 
+import { AddDescription } from '../../components';
+
 const styles = StyleSheet.create({
   slide: {
     flex: 1,
@@ -22,6 +24,7 @@ const Hours = () => (
     <View style={[styles.slide, { backgroundColor: '#fa931d' }]}>
       <View level={10}>
         <Text style={styles.text}>Principal microfono</Text>
+        <AddDescription />
       </View>
       <View level={15}>
         <Text style={styles.text}>Page 1</Text>
