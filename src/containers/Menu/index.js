@@ -1,25 +1,13 @@
-import React, { useCallback } from 'react';
-import { View, Button } from 'react-native';
-import LottieView from 'lottie-react-native';
+// import React, { useCallback } from 'react';
 
-import { EXAMPLE_SCREEN } from '../../navigation/screens';
+// import Main from '../Main';
+// import { EXAMPLE_SCREEN } from '../../navigation/screens';
+// import { Menu as MenuComponent } from '../../components/Menu/index';
 
-const Menu = () => {
-  const handleNavigateMsg = useCallback(
-    () => NavigationPreloadManager.navigate(EXAMPLE_SCREEN),
-    []
-  );
+// const Menu = () => {
+//   <Main navigation={navigation}>
+//     <MenuComponent {...MenuComponent} />
+//   </Main>;
+// };
 
-  return (
-    <View>
-      <Button tittle='MSG' onPress={handleNavigateMsg} />
-      <LottieView
-        // source={require('../../resources/animations/2887-listen-state.json')}
-        autoPlay
-        loop
-      />
-    </View>
-  );
-};
-
-export default Menu;
+// export default Menu;
