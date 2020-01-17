@@ -9,6 +9,7 @@ import { fetchText } from '../../actions/example';
 import { makeGetData, makeGetStatus } from '../../selectors/example';
 import { useActions } from '../../hooks';
 import { Example as ExampleComponent } from '../../components';
+import { ListProjects as ListProjectsComponent } from '../../components';
 import { URL_REACT_NATIVE } from '../../config/constants';
 import {
   WELCOME_MSG,
@@ -41,23 +42,13 @@ const Example = ({ navigation }) => {
 
   return (
     <Main navigation={navigation}>
-      <ImageBackground
-        source={reactImage}
-        style={styles.background}
-        imageStyle={styles.logo}
-      >
-        {!!global.HermesInternal && (
-          <Text style={styles.engine}>{HERMES_ENGINE}</Text>
-        )}
         <Text style={styles.title}>{WELCOME_MSG}</Text>
-        <ExampleComponent {...{ text, fetching, onFetchText }} />
+        <ListProjectsComponent/>
         <TouchableOpacity
           style={styles.linkContainer}
           onPress={handleOpenURLInBrowserl}
         >
-          <Text style={styles.link}>{LEARN_REACT_NATIVE_MSG}</Text>
         </TouchableOpacity>
-      </ImageBackground>
     </Main>
   );
 };
