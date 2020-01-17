@@ -7,16 +7,19 @@ import styles from './styles';
 
 const HoursLoad = () => (
   <View>
-    <Text style={styles.textContainer}>Cargar Horas</Text>
+    <Text style={styles.textContainer}>Bienvenido a Sippur</Text>
     <LottieView
       source={require('../../resources/animations/2887-listen-state.json')}
       autoPlay
       loop
     />
     <View style={styles.containerBoton}>
-      <Button mode='contained' style={styles.boton}>
+      <Text style={styles.textSub}>
+        Desliza hacia la izquierda para navegar
+      </Text>
+      {/* <Button mode='contained' style={styles.boton}>
         Menu
-      </Button>
+      </Button> */}
     </View>
   </View>
 );

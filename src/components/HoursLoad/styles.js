@@ -2,7 +2,8 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   containerBoton: {
-    marginTop: 450
+    marginTop: 450,
+    alignContent: 'center'
   },
   boton: {
     height: 40,
@@ -17,7 +18,13 @@ const styles = StyleSheet.create({
   textContainer: {
     fontSize: 30,
     fontWeight: 'bold',
-    marginBottom: 30
+    marginBottom: 30,
+    textAlign: 'center',
+    marginTop: 30
+  },
+  textSub: {
+    fontSize: 15,
+    textAlign: 'center'
   }
 });
 

@@ -6,9 +6,10 @@ import {
 import { makeGetNav } from '../selectors/nav';
 
 import RootNavigator from './RootNavigator';
+import DrawerNavigator from './DrawerNavigator';
 
 const navigationMiddleware = createReactNavigationReduxMiddleware(makeGetNav());
 
 const AppNavigator = createReduxContainer(RootNavigator);
 
-export { navigationMiddleware, AppNavigator, RootNavigator };
+export { navigationMiddleware, AppNavigator, RootNavigator, DrawerNavigator };

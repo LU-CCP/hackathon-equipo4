@@ -7,7 +7,7 @@ import { NavigationActions } from 'react-navigation';
 import { SafeAreaProvider } from 'react-native-safe-area-view';
 
 import { makeGetNav } from '../../selectors/nav';
-import { AppNavigator } from '../../navigation';
+import { AppNavigator, DrawerNavigator } from '../../navigation';
 import { useActions, useBackHandler, useMount } from '../../hooks';
 import colors from '../../theme/colors';
 import theme from '../../theme';
@@ -41,7 +41,13 @@ const Root = () => {
     <SafeAreaProvider>
       <Provider theme={theme}>
         <StatusBar backgroundColor={colors.primary} barStyle='dark-content' />
-        <AppNavigator state={nav} dispatch={dispatch} />
+        <DrawerNavigator
+          {...{ nav, user: { name: 'lagash' }, onNavigate: () => {} }}
+        >
+          <Provider theme={theme}>
+            <AppNavigator state={nav} dispatch={dispatch} />
+          </Provider>
+        </DrawerNavigator>
       </Provider>
     </SafeAreaProvider>
   );
