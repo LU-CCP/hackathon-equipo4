@@ -12,6 +12,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     alignItems: 'flex-start',
     justifyContent: 'flex-start'
+  },
+  container2: {
+    marginTop: 22
   }
 });
 

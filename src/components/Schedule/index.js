@@ -62,34 +62,36 @@ export default class Schedule extends Component {
         >
           Programa tu carga
         </Text>
-        <CalendarPicker
-          locale='es'
-          startFromMonday
-          allowRangeSelection
-          minDate={minDate}
-          maxDate={maxDate}
-          todayBackgroundColor='#f2e6ff'
-          selectedDayColor='#3e64ff'
-          selectedDayTextColor='#FFFFFF'
-          onDateChange={this.handleDateChange}
-          weekdays={['Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab', 'Dom']}
-          months={[
-            'Enero',
-            'Febrero',
-            'Marzo',
-            'Abril',
-            'Mayo',
-            'Junio',
-            'Julio',
-            'Agosto',
-            'Septiembre',
-            'Octubre',
-            'Noviembre',
-            'Diciembre'
-          ]}
-          previousTitle='Anterior'
-          nextTitle='Próximo'
-        />
+        <View style={{ marginLeft: 10, marginRight: 10 }}>
+          <CalendarPicker
+            locale='es'
+            startFromMonday
+            allowRangeSelection
+            minDate={minDate}
+            maxDate={maxDate}
+            todayBackgroundColor='#f2e6ff'
+            selectedDayColor='#3e64ff'
+            selectedDayTextColor='#FFFFFF'
+            onDateChange={this.handleDateChange}
+            weekdays={['Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab', 'Dom']}
+            months={[
+              'Enero',
+              'Febrero',
+              'Marzo',
+              'Abril',
+              'Mayo',
+              'Junio',
+              'Julio',
+              'Agosto',
+              'Septiembre',
+              'Octubre',
+              'Noviembre',
+              'Diciembre'
+            ]}
+            previousTitle='Anterior'
+            nextTitle='Próximo'
+          />
+        </View>
 
         <View>
           <Text>Fecha de inicio: {startDate}</Text>
