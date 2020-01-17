@@ -35,7 +35,18 @@ const DrawerItems = ({ currentRouteName, userName, onGoTo }) => {
         <Drawer.Section>
           <Title style={styles.headerTitle}>{userName}</Title>
         </Drawer.Section>
-        <Drawer.Section title='Menu'>{ROUTES.map(renderItem)}</Drawer.Section>
+        <Drawer.Section title='Historial Carga de horas'>
+          {ROUTES.map(renderItem)}
+        </Drawer.Section>
+        <Drawer.Section title='Calendario'>
+          {ROUTES.map(renderItem)}
+        </Drawer.Section>
+        <Drawer.Section title='Horas Programadas'>
+          {ROUTES.map(renderItem)}
+        </Drawer.Section>
+        <Drawer.Section title='Configuración'>
+          {ROUTES.map(renderItem)}
+        </Drawer.Section>
       </ScrollView>
     </SafeAreaView>
   );

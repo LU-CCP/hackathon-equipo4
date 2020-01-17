@@ -7,7 +7,7 @@ const { colors } = theme;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.surface
+    backgroundColor: colors.primary
   },
   safeArea: {
     flex: 1,
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   headerTitle: {
     margin: 5,
     textAlign: 'center',
-    paddingTop: 15
+    paddingTop: 16
   }
 });
 
