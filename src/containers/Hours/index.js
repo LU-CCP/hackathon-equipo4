@@ -27,7 +27,7 @@ const Hours = () => (
     <View style={[styles.slide, { backgroundColor: 'white' }]}>
       <HoursLoad />
     </View>
-    <View style={[styles.slide, { backgroundColor: '#fa931d' }]}>
+    <View style={[styles.slide, { backgroundColor: 'white' }]}>
       <Summary />
     </View>
     <View style={[styles.slide, { backgroundColor: '#a4b602' }]}>
