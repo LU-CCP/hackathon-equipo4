@@ -22,16 +22,7 @@ const styles = StyleSheet.create({
 const Hours = () => (
   <AppIntro>
     <View style={[styles.slide, { backgroundColor: '#fa931d' }]}>
-      <View level={10}>
-        <Text style={styles.text}>Principal microfono</Text>
-        <AddDescription />
-      </View>
-      <View level={15}>
-        <Text style={styles.text}>Page 1</Text>
-      </View>
-      <View level={8}>
-        <Text style={styles.text}>Page 1</Text>
-      </View>
+      <AddDescription />
     </View>
     <View style={[styles.slide, { backgroundColor: '#a4b602' }]}>
       <View level={-10}>
