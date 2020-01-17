@@ -9,23 +9,31 @@ import {
 // import { Button } from 'react-native-paper';
 import RNPickerSelect from 'react-native-picker-select';
 
+import { useMount } from '../../hooks';
+
 import styles from './styles';
 
-const ChargeHours = ({ onChange }) => {
-  const { hours, hourType } = onChange;
+const ChargeHours = ({ onChangehours, onChangeHourType }) => {
+  // const { hours, hourType } = onChange;
   const [value, setValue] = useState('productivo');
   const handleValueChange = useCallback(
     newValue => {
       setValue(newValue);
-      onChange({ hourType: newValue });
+      onChangeHourType(newValue);
     },
-    [onChange]
+    [onChangeHourType]
   );
   const [numberHours, setNumberHours] = useState();
   const numberInputHandler = inputHours => {
-    setNumberHours(inputHours.replace(/[^0-9]/g, ''));
-    onChange({ hours: numberHours });
+    const newHours = inputHours.replace(/[^0-9]/g, '');
+
+    setNumberHours(newHours);
+    onChangehours(newHours);
   };
+
+  useMount(() => {
+    onChangeHourType('productivo');
+  });
 
   return (
     <TouchableWithoutFeedback
