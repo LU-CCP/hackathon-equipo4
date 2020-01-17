@@ -6,6 +6,8 @@ import useMount from './useMount';
 import useNavigationEvents from './useNavigationEvents';
 import useUnmount from './useUnmount';
 import useEventListener from './useEventListener';
+import useBackHandlerEvents from './useBackHandlerEvents';
+import useWindowDimensions from './useWindowDimensions';
 
 export {
   useActions,
@@ -15,5 +17,7 @@ export {
   useMount,
   useNavigationEvents,
   useUnmount,
-  useEventListener
+  useEventListener,
+  useBackHandlerEvents,
+  useWindowDimensions
 };
