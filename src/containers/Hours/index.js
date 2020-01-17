@@ -41,7 +41,7 @@ const Hours = () => {
   const [project, setProject] = useState();
 
   return (
-    <AppIntro>
+    <AppIntro skipBtnLabel='Atrás'>
       <View>
         <HoursLoad />
       </View>
