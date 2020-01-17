@@ -16,9 +16,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginVertical: 5,
     alignItems: 'center'
-  },
-  radio: {
-    color: 'red'
   }
 });
 
