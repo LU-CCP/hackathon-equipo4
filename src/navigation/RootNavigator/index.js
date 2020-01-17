@@ -3,16 +3,17 @@ import {
   TransitionPresets
 } from 'react-navigation-stack';
 
-import { Example, ChargeHours } from '../../containers';
-import { CHARGE_HOURS_SCREEN } from '../screens';
+import { Example, Hours, Login } from '../../containers';
+import { LOGIN_SCREEN } from '../screens';
 
 const RootNavigator = createStackNavigator(
   {
     Example,
-    ChargeHours
+    Hours,
+    Login
   },
   {
-    initialRouteName: CHARGE_HOURS_SCREEN,
+    initialRouteName: LOGIN_SCREEN,
     headerMode: 'none',
     defaultNavigationOptions: {
       ...TransitionPresets.SlideFromRightIOS,

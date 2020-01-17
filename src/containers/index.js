@@ -1,4 +1,6 @@
 import Example from './Example';
-import ChargeHours from './ChargeHours';
+import Hours from './Hours';
+import Login from './Login';
+import CheckSend from './CheckSend';
 
-export { Example, ChargeHours };
+export { Example, Hours, Login };

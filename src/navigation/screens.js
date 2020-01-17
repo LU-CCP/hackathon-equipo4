@@ -1,2 +1,3 @@
 export const EXAMPLE_SCREEN = 'Example';
-export const CHARGE_HOURS_SCREEN = 'ChargeHours';
+export const HOURS_SCREEN = 'Hours';
+export const LOGIN_SCREEN = 'Login';
