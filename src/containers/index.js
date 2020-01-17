@@ -1,4 +1,4 @@
 import Example from './Example';
 import AddDescription from './AddDescription';
 
-export { Example };
+export { Example, AddDescription };
