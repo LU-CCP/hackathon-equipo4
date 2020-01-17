@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import AppIntro from 'rn-falcon-app-intro';
 import { StyleSheet, Text, View } from 'react-native';
 
-import { AddDescription, Schedule, ChargeHours } from '../../components';
+import {
+  AddDescription,
+  Schedule,
+  ChargeHours,
+  ListProjects
+} from '../../components';
 
 const styles = StyleSheet.create({
   slide: {
@@ -28,9 +33,13 @@ const Hours = () => {
   const [description, setDescription] = useState();
   const [dateRange, setDateRange] = useState();
   const [hourType, setHourType] = useState();
+  const [project, setProject] = useState();
 
   return (
     <AppIntro>
+      <View>
+        <ListProjects onChange={setProject} />
+      </View>
       <View style={styles.slide2}>
         <ChargeHours onChange={setHourType} />
       </View>
