@@ -9,7 +9,7 @@ import style from './styles';
 
 const AddDescription = () => {
   const voiceRef = useRef(new VoiceToText());
-
+  const [text, setText] = useState('');
   const handlePress = useCallback(async () => {
     if (!(await VoiceToText.isRecognizing())) {
       console.log('ok');
@@ -18,6 +18,7 @@ const AddDescription = () => {
   }, []);
   const handleRecord = useCallback(({ value }) => {
     console.log(value);
+    setText(value[0]);
   }, []);
 
   useUnmount(() => {
@@ -38,6 +39,7 @@ const AddDescription = () => {
               loop
             />
           </TouchableWithoutFeedback>
+          <Text>{text}</Text>
         </View>
       </View>
       <Text>Descripcion</Text>
