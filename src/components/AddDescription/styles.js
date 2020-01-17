@@ -1,16 +1,20 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  Boton1: {
-    marginTop: 400,
-    paddingRight: 100,
-    flexDirection: 'row',
-    height: 50
+  boton2: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
-  Boton2: {
-    marginTop: 60,
-    paddingRight: 100,
-    flexDirection: 'row',
-    height: 50
-  }
+  boton: {
+    marginBottom: 20
+  },
+  container: {
+    flex: 1
+  },
+  container2: { flex: 1, justifyContent: 'center' },
+  container3: { height: 190, justifyContent: 'center', marginTop: 30 },
+  container4: { flex: 1 }
 });
+
+export default styles;
