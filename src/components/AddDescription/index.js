@@ -1,25 +1,34 @@
 import React, { useRef, useCallback, useState } from 'react';
 import VoiceToText, { EVENTS } from 'react-native-voice-oop';
-import { View, Text, Button, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, TouchableWithoutFeedback } from 'react-native';
 import LottieView from 'lottie-react-native';
+import { TextInput, Button } from 'react-native-paper';
 
 import { useLifecycles, useEventListener, useUnmount } from '../../hooks';
 
-import style from './styles';
+import styles from './styles';
 
-const AddDescription = () => {
+const AddDescription = ({ onChange }) => {
   const voiceRef = useRef(new VoiceToText());
   const [text, setText] = useState('');
+  const [disableInput, setDisableInput] = useState(true);
+  const micRef = useRef();
+
   const handlePress = useCallback(async () => {
     if (!(await VoiceToText.isRecognizing())) {
-      console.log('ok');
+      micRef.current.play();
       voiceRef.current.start();
     }
   }, []);
-  const handleRecord = useCallback(({ value }) => {
-    console.log(value);
-    setText(value[0]);
-  }, []);
+
+  const handleRecord = useCallback(
+    ({ value }) => {
+      setText(value[0]);
+      onChange(value[0]);
+      micRef.current.reset();
+    },
+    [onChange]
+  );
 
   useUnmount(() => {
     voiceRef.current.destroy();
@@ -28,26 +37,47 @@ const AddDescription = () => {
 
   useEventListener(EVENTS.results, handleRecord, voiceRef.current);
 
+  const textInputhandler = value => {
+    setText(value);
+    onChange(value);
+  };
+
+  const handleModifyInput = () => {
+    setDisableInput(false);
+  };
+
   return (
-    <View>
-      <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ height: 190, justifyContent: 'center', marginTop: 30 }}>
+    <View style={styles.container}>
+      <View style={styles.container2}>
+        <View style={styles.container3}>
           <TouchableWithoutFeedback onPress={handlePress}>
             <LottieView
               source={require('../../resources/animations/2887-listen-state.json')}
-              autoPlay
               loop
+              ref={micRef}
             />
           </TouchableWithoutFeedback>
-          <Text>{text}</Text>
         </View>
       </View>
-      <Text>Descripcion</Text>
-      <View style={style.nuevoBoton}>
-        <Button title='Grabar nuevamente' />
+      <View style={styles.container4}>
+        <TextInput
+          value={text}
+          onChangeText={textInputhandler}
+          disabled={disableInput}
+          label='Descripción'
+        />
       </View>
-      <View>
-        <Button title='Modificar texto' />
+      <View style={styles.boton2}>
+        <Button style={styles.boton} mode='contained'>
+          Grabar nuevamente
+        </Button>
+        <Button
+          style={styles.boton}
+          mode='contained'
+          onPress={handleModifyInput}
+        >
+          Modificar texto
+        </Button>
       </View>
     </View>
   );
