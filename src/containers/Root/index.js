@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+import { Provider } from 'react-native-paper';
 import SplashScreen from 'react-native-splash-screen';
 import { StatusBar } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,6 +10,7 @@ import { makeGetNav } from '../../selectors/nav';
 import { AppNavigator } from '../../navigation';
 import { useActions, useBackHandler, useMount } from '../../hooks';
 import colors from '../../theme/colors';
+import theme from '../../theme';
 
 import { SPLASH_SCREEN_HIDE_TIMEOUT } from './utils';
 
@@ -37,8 +39,10 @@ const Root = () => {
 
   return (
     <SafeAreaProvider>
-      <StatusBar backgroundColor={colors.primary} barStyle='dark-content' />
-      <AppNavigator state={nav} dispatch={dispatch} />
+      <Provider theme={theme}>
+        <StatusBar backgroundColor={colors.primary} barStyle='dark-content' />
+        <AppNavigator state={nav} dispatch={dispatch} />
+      </Provider>
     </SafeAreaProvider>
   );
 };
