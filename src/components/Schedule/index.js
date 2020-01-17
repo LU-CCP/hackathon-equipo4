@@ -25,26 +25,43 @@ export default class Schedule extends Component {
 
   handleDateChange(date, type) {
     if (type === 'END_DATE') {
-      this.setState({
-        selectedEndDate: moment(date).format('DD-MM-YYYY')
-      });
+      this.setState(
+        {
+          selectedEndDate: moment(date).format('DD-MM-YYYY')
+        },
+        this.handleCallback
+      );
     } else {
-      this.setState({
-        selectedStartDate: moment(date).format('DD-MM-YYYY'),
-        selectedEndDate: null
-      });
+      this.setState(
+        {
+          selectedStartDate: moment(date).format('DD-MM-YYYY'),
+          selectedEndDate: null
+        },
+        this.handleCallback
+      );
     }
   }
 
   render() {
     const { selectedStartDate, selectedEndDate } = this.state;
-    const minDate = new Date(2020, 1, 1); // Today
+    const minDate = new Date(); // Today
     const maxDate = new Date(2022, 6, 3);
     const startDate = selectedStartDate ? selectedStartDate.toString() : '';
     const endDate = selectedEndDate ? selectedEndDate.toString() : '';
 
     return (
       <View style={styles.container}>
+        <Text
+          style={{
+            fontSize: 30,
+            fontWeight: 'bold',
+            marginBottom: 30,
+            textAlign: 'center'
+            // marginTop: 30
+          }}
+        >
+          Programa tu carga
+        </Text>
         <CalendarPicker
           locale='es'
           startFromMonday
@@ -54,7 +71,7 @@ export default class Schedule extends Component {
           todayBackgroundColor='#f2e6ff'
           selectedDayColor='#3e64ff'
           selectedDayTextColor='#FFFFFF'
-          handleDateChange={this.handleDateChange}
+          onDateChange={this.handleDateChange}
           weekdays={['Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab', 'Dom']}
           months={[
             'Enero',

@@ -4,7 +4,7 @@ import { View, Text, TouchableWithoutFeedback } from 'react-native';
 import LottieView from 'lottie-react-native';
 import { TextInput, Button } from 'react-native-paper';
 
-import { useLifecycles, useEventListener, useUnmount } from '../../hooks';
+import { useEventListener, useUnmount } from '../../hooks';
 
 import styles from './styles';
 
@@ -48,6 +48,17 @@ const AddDescription = ({ onChange }) => {
 
   return (
     <View style={styles.container}>
+      <Text
+        style={{
+          fontSize: 30,
+          fontWeight: 'bold',
+          marginBottom: 30,
+          textAlign: 'center',
+          marginTop: 30
+        }}
+      >
+        Dime tu descripción
+      </Text>
       <View style={styles.container2}>
         <View style={styles.container3}>
           <TouchableWithoutFeedback onPress={handlePress}>
