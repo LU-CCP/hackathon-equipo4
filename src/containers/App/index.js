@@ -5,10 +5,10 @@ import '../../config/debug';
 import store from '../../store';
 import Root from '../Root';
 
-const App = () => (
+const AddDescription = () => (
   <Provider store={store}>
     <Root />
   </Provider>
 );
 
-export default App;
+export default AddDescription;
