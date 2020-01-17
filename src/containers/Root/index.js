@@ -42,7 +42,7 @@ const Root = () => {
       <Provider theme={theme}>
         <StatusBar backgroundColor={colors.primary} barStyle='dark-content' />
         <DrawerNavigator
-          {...{ nav, user: { name: 'lagash' }, onNavigate: () => {} }}
+          {...{ nav, user: { name: 'Sippur' }, onNavigate: () => {} }}
         >
           <Provider theme={theme}>
             <AppNavigator state={nav} dispatch={dispatch} />
