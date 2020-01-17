@@ -3,13 +3,14 @@ import {
   TransitionPresets
 } from 'react-navigation-stack';
 
-import { Example, AddDescription } from '../../containers';
+import { Example, AddDescription, Hours } from '../../containers';
 import { EXAMPLE_SCREEN } from '../screens';
 
 const RootNavigator = createStackNavigator(
   {
     Example,
-    AddDescription
+    AddDescription,
+    Hours
   },
   {
     initialRouteName: EXAMPLE_SCREEN,
