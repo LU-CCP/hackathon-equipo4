@@ -2,13 +2,13 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
 
-import styles from '../AddDescription/styles';
+import styles from './styles';
 
 const Summary = () => (
   <View>
     <Text>Resumen</Text>
-    <View style={styles.containerText}>
-      <TextInput label='Resumen' />
+    <View>
+      <TextInput style={styles.containerText} label='Resumen' />
     </View>
   </View>
 );
